@@ -97,7 +97,7 @@ jobs:
 
       - name: Build and push a simple jenkins controller
         if: contains(env.files, 'dockerfiles/Dockerfile') || contains(env.files, 'dockerfiles/')
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ./dockerfiles
           platforms: linux/amd64, linux/aarch64
@@ -105,7 +105,7 @@ jobs:
           tags: ghcr.io/${{ env.REPO_NAME }}/jenkinsci-tutorials:simple_controller_${{ env.BRANCH }}
       - name: Build and push the jenkins agent for maven tutorial
         if: contains(env.files, 'dockerfiles/maven/Dockerfile')
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ./dockerfiles/maven
           platforms: linux/amd64, linux/aarch64
@@ -114,7 +114,7 @@ jobs:
 
       - name: Build and push the jenkins agent for python tutorial
         if: contains(env.files, 'dockerfiles/python/Dockerfile')
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ./dockerfiles/python
           platforms: linux/amd64, linux/aarch64
@@ -122,7 +122,7 @@ jobs:
           tags: ghcr.io/${{ env.REPO_NAME }}/jenkinsci-tutorials:python_agent_${{ env.BRANCH }}
       - name: Build and push the jenkins agent for node tutorial
         if: contains(env.files, 'dockerfiles/node/Dockerfile')
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ./dockerfiles/node
           platforms: linux/amd64, linux/aarch64
@@ -131,7 +131,7 @@ jobs:
 
       - name: Build and push the jenkins agent for the sidekick container
         if: contains(env.files, 'dockerfiles/sidekick/Dockerfile')
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ./dockerfiles/sidekick
           platforms: linux/amd64, linux/aarch64
@@ -140,7 +140,7 @@ jobs:
 
       - name: Build and push the jenkins agent for the agent-finding container
         if: contains(env.files, 'dockerfiles/agent-discovery/Dockerfile')
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ./dockerfiles/agent-discovery/
           platforms: linux/amd64, linux/aarch64
@@ -149,7 +149,7 @@ jobs:
 
       - name: Build and push the jenkins agent for multi-branch controller
         if: contains(env.files, 'dockerfiles/multi/Dockerfile')
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ./dockerfiles/multi
           platforms: linux/amd64, linux/aarch64
@@ -158,7 +158,7 @@ jobs:
 
       - name: Build and push the jenkins agent for Android
         if: contains(env.files, 'dockerfiles/android/Dockerfile')
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ./dockerfiles/android
           platforms: linux/amd64
@@ -167,7 +167,7 @@ jobs:
 
       - name: Build and push the jenkins agent for golang tutorial
         if: contains(env.files, 'dockerfiles/golang/Dockerfile')
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ./dockerfiles/golang
           platforms: linux/amd64, linux/arm64
